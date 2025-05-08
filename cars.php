@@ -6,6 +6,7 @@
         $result = mysqli_query($dbconn, $query);
         if ($result){
             if (mysqli_num_rows($result) > 0) {
+                echo("<table>");
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
                     echo "<td>" . $row['car_id'] . "</td>";
@@ -15,6 +16,7 @@
                     echo "<td>" . $row['yom'] . "</td>";
                     echo "</tr>";
                 }
+                echo("</table>");
             } else {
                 echo "<tr><td colspan='5'>There are no cars to display.</td></tr>";
             }
